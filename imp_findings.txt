@@ -1,0 +1,39 @@
+USERS
+Tables connecting through users - ORDERS, PAYMENTS, ADDRESSES, PRODUCT_REVIEWS
+Columns - ID, EMAIL, FIRST_NAME, LAST_NAME
+
+(i) USERS & ORDERS
+ID -> USER_ID (Min_value = 1 & Max_value = 70)
+
+(ii) USERS & ADDRESSES
+ID -> USER_ID
+
+ORDER_ITEMS
+Tables connecting through order_items - ORDERS, PRODUCTS
+Columns - ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE
+
+(i) ORDER_ITEMS & ORDERS
+ORDER_ID -> ID (Min_value = 1 & Max_value = 360)
+
+(ii) ORDER_ITEMS & PRODUCTS
+PRODUCT_ID -> ID (Min_value = 1 & Max_value = 400)
+
+PAYMENTS
+Tables connecting through payments - ORDERS, PAYMENT_METHODS
+Columns - ID, ORDER_ID, PAYMENT_METHOD_ID, AMOUNT, PAYMENT_STATUS
+
+(i) PAYMENTS & ORDERS
+ORDER_ID -> ID (Min_value = 1 & Max_value = 360)
+
+(ii) PAYMENTS & PAYMENT_METHODS
+PAYMENT_METHOD_ID -> ID (Min_value = 1 & Max_value = 5)
+
+PRODUCT_INVENTORIES
+Tables connecting through product_inventories - PRODUCTS, WAREHOUSES
+Columns - ID, PRODUCT_ID, WAREHOUSE_ID, QUANTITY
+
+(i) PRODUCT_INVENTORIES & PRODUCTS
+PRODUCT_ID -> ID (Min_value = 1 & Max_value = 400)
+
+(ii) PRODUCT_INVENTORIES & WAREHOUSES
+WAREHOUSE_ID -> ID (Min_value = 1 & Max_value = 6)
